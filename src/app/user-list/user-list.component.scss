@@ -1,0 +1,75 @@
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-parent {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    cursor: wait;
+}
+
+.se-pre-parent {
+    height: 100%;
+    z-index: 9999;
+    background: url(https://i.gifer.com/ZKZg.gif) center no-repeat;
+    background-size: 100px 100px;
+    background-attachment: inherit;
+    background-position: center center;
+    background-color: #cdcbcb26;
+}
+
+.positionReletive {
+    position: relative;
+    display: block;
+}
+
+.container {
+    padding: 2rem 0rem;
+    width: 50%;
+    text-align: left;
+    margin: 0px auto;
+}
+
+h4 {
+    margin: 2rem 0rem 1rem;
+}
+
+table {
+    width: 100%;
+}
+
+.table-image {
+    td {
+        border-bottom: 1px solid #000;
+    }
+
+    td,
+    th {
+        vertical-align: middle;
+    }
+}
+
+.img-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.mat-mdc-raised-button[disabled],
+.mat-mdc-raised-button.mat-mdc-button-disabled {
+    cursor: default;
+    pointer-events: none;
+    color: var(--mdc-protected-button-label-text-color);
+    background-color: #959595;
+}

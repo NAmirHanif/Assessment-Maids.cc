@@ -1,0 +1,29 @@
+<div [ngLoading]="isLoading" class="container">
+    <button mat-raised-button (click)="goBack()" class=" mb-2">Back</button>
+    <div class="row mb-2">
+        <div class="col-12">
+            <section>
+                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+                    <mat-card>
+                        @if(user){
+                        <mat-card-header>
+                            <mat-card-title>User Details</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <img [src]="user.avatar" alt="Avatar"
+                                style="width: 150px; height: 150px; border-radius: 50%;">
+                            <p>ID: {{ user.id }}</p>
+                            <p>First Name: {{ user.first_name }}</p>
+                            <p>Last Name: {{ user.last_name }}</p>
+                            <p>Email: {{ user.email }}</p>
+                        </mat-card-content>
+
+                        }@else {
+                        <div>No User Found</div>
+                        }
+                    </mat-card>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

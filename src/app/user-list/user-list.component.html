@@ -1,0 +1,55 @@
+<div [ngLoading]="isLoading" class="container">
+
+    <div>
+        <div class="row">
+            <div class="col-12">
+
+                <table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="avatar">
+                        <th mat-header-cell *matHeaderCellDef> Avatar </th>
+                        <td mat-cell *matCellDef="let user">
+                            <img [src]="user.avatar" class="img-fluid img-thumbnail" alt="Avatar">
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> Id </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="first_name">
+                        <th mat-header-cell *matHeaderCellDef> First Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="last_name">
+                        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="navigateToUserDetails(row)">
+                    </tr>
+
+                </table>
+                <div style="margin-top: 10px;">
+                    <button mat-raised-button (click)="onPageChange(currentPage - 1)"
+                        [disabled]="currentPage === 1">Previous</button>
+                    &nbsp;
+                    <span>Page {{ currentPage }}</span>
+                    &nbsp;
+                    <button mat-raised-button (click)="onPageChange(currentPage + 1)"
+                        [disabled]="total_pages === currentPage">Next</button>
+                    &nbsp;
+                    <span>Total Pages {{ total_pages }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
